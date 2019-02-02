@@ -1,1 +1,1 @@
-worker: node bot.js DKBot
+worker: node bot.js
