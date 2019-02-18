@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "-";
+var prefix = "+";
 client.on('message', message => { // Leaked by [ @M3a4x ]
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'bc')) {
@@ -289,7 +289,7 @@ client.on('message', message =>{
     let args = message.content.split(' ');
     let prefix = '-'; 
     
-    if(args[0] === `${prefix}avatar`){
+    if(args[0] === `+{prefix}avatar`){
         let mentions = message.mentions.members.first()
         if(!mentions) {
           let sicon = message.author.avatarURL
@@ -743,7 +743,7 @@ client.user.setStatus("dnd")
  
  
 client.on('message' , message => {
-if(message.content === '$help') {
+if(message.content === '-help') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
