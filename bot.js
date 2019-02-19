@@ -736,7 +736,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | Viper RP`,"http://twitch.tv/DJ")
+client.user.setGame(`$help | By Gaz`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
