@@ -1,4 +1,3 @@
-const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "-";
@@ -71,7 +70,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "#clear") {
+    if (message.content == "-clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -112,7 +111,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
 
 client.on('message',  (message) => {
-        if(message.content.startsWith('$kf')) {
+        if(message.content.startsWith('-kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
@@ -172,7 +171,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 client.on('message', message => {
-    if (message.content.startsWith("$hacked")) {
+    if (message.content.startsWith("-hacked")) {
       if (message.author.bot) return
            message.delete();
              let args = message.content.split(' ').slice(1);
