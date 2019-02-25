@@ -1,10 +1,46 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "$";
+const bot = new Discord.Client();
+const figlet = require('figlet');
+const fs = require('fs');
+var prefix = "-";
 const developers = ["469427192011423764"]
-const adminprefix = "$";
+const adminprefix = "-";
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
+var moment = require('moment')
+var Canvas = require('canvas');
+var jimp = require('jimp');
+const dateFormat = require('dateformat');
+var entryCount = 0;
+const ytdl = require("ytdl-core");
+const { Client, Util } = require('discord.js');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
+const prefix = "-";
+let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
+client.on('ready', () => {
+  console.log('╔[════════════════════════════════════]╗');
+  console.log('')
+  console.log('            ╔[════════════]╗')
+  console.log('              Bot Is Online')
+  console.log('            ╚[════════════]╝')
+  console.log('')
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log('')
+  console.log('By LuZoNa_DK')
+  console.log('')  
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log('')
+  console.log('╚[════════════════════════════════════]╝')
+});
+
+
 
 client.on('message',async message => {
     
@@ -53,6 +89,10 @@ client.on('message', async message => {
     },86400000);
     }
 });
+
+
+
+
 
 
 client.login(process.env.BOT_TOKEN);
