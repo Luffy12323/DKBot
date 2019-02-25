@@ -49,6 +49,26 @@ msg.delete();
 }
 });
 
+
+let room1 = '549596380885286912'; 
+let room2 = '549596442566590474'; 
+let room3 = '549596752643358740'; 
+
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get(room1).setName(`Total Users: ${member.guild.memberCount}`);
+    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size;
+    member.guild.channels.get(room2).setName(`Total Humans: ${humans}`);
+    let bots = member.guild.members.filter(m => m.user.bot).size - 1;
+    member.guild.channels.get(room3).setName(`Total Bots: ${bots}`);
+});
+client.on('guildMemberRemove', member => {
+    member.guild.channels.get(room1).setName(`Total Users: ${member.guild.memberCount}`);
+    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size;
+    member.guild.channels.get(room2).setName(`Total Humans: ${humans}`);
+    let bots = member.guild.members.filter(m => m.user.bot).size - 1;
+    member.guild.channels.get(room3).setName(`Total Bots: ${bots}`);
+
+   
   client.on('message', message => {
     if (message.content.startsWith("-Link")) {
 
