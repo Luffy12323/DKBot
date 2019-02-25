@@ -1,40 +1,94 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "-";
-client.on('message',async message => {
-  if(message.channel.type === 'dm') return;
-  if(message.author.bot) return;
-  let args = message.content.split(' ');
-  if(args[0] === `${prefix}bc`) {
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('- **أنت لا تملك الصلاحيات اللازمة لأستخدام هذا الأمر**');
-  if(!args[1]) return message.channel.send('- **يجب عليك كتابة الرسالة بعد الأمر**');
+client.on('message', message => {
+    if (message.content.startsWith("-bc")) {
+    if (message.channel.type === 'dm') return ;
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`:x: **| You Don't Have Permission 'ADMINSTRATOR' ليس لديك صلاحية **`)
+    if(!message.guild.member(client.user).hasPermission('ADMINISTRATOR'))return message.channel.send(`**:x: | I Don't Have Permission 'ADMINSTRATOR' ليس لدي صلاحية **`)
+    let args = message.content.split(' ').slice(1).join(' ')
+    if (!args) return message.reply('You Must Write Message To Send Brodcast|يجب وضع رسالة لأرسال البرودكاست');
+    message.reply(`**Are You Sure ? | [yes|نعم] | هل انت متاكد ؟**`).then(() => {
+        message.channel.awaitMessages(msg => msg.content == 'yes' || msg.content == "نعم", {
+            max: 1,
+            time: 10000,
+            errors: ['time']
+        })
+            .then(() => {
+             message.channel.send('Wait... | ...انتظر قليلا').then(function(m) {
+             setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓]1`)
+             }, 1000)
+             setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓]2%`)
+             }, 3000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓]3%`)
+             }, 5000)
+             setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓]4%`)
+             }, 7000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓]15%`)
+             }, 9000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓]23%`)
+             }, 10000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓]46%`)
+             }, 12000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓]59%`)
+             }, 14000)
+               setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓]68%`)
+             }, 16000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓]75%`)
+             }, 18000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]87%`)
+             }, 20000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]95%`)
+             }, 21000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]96%`)
+             }, 23000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]97%`)
+             }, 24000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]98%`)
+             }, 25000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]99%`)
+             }, 26000)
+                setTimeout(function() {
+               m.edit(`جاري ارسال الرسالة: [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]100%`)
+             }, 27000)
+             setTimeout(function() {
+               m.edit(`☑|I Sended The Message To ${message.guild.memberCount} | تم أرسال الرسالة لـ|☑`)
+             }, 29000)
+              }); 
 
-  let msgCount = 0;
-  let errorCount = 0;
-  let successCount = 0;
-    let status;
-    if(msgCount === message.guild.memberCount) {
-        status = 'Sent';
-    } else if(msgCount !== message.guild.memberCount) {
-        status = 'Sending';
-    }
-  message.channel.send(`**- [ 🔖 :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ 📥 :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ 📤 :: ${errorCount} ]・عدد الرسائل الغير مستلمة\n- [ ▫ :: ${status} ]・حالة الرسائل المرسلة**`).then(msg => {
-    message.guild.members.forEach(g => {
-      g.send(args.slice(1).join(' ')).then(() => {
-        successCount++;
-        msgCount++;
-                if(!msg) return;
-        msg.edit(`**- [ 🔖 :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ 📥 :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ 📤 :: ${errorCount} ]・عدد الرسائل الغير مستلمة\n- [ ▫ :: ${status} ]・حالة الرسائل المرسل**`);
-      }).catch(e => {
-        errorCount++;
-        msgCount++;
-                if(!msg) return;
-        msg.edit(`**- [ 🔖 :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ 📥 :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ 📤 :: ${errorCount} ]・عدد الرسائل الغير مستلمة\n- [ ▫ :: ${status} ]・حالة الرسائل المرسل**`);
-      });
+                //message.guild.members.filter(m=> m.presence.status !== 'offline').forEach(m => {
+                message.guild.members.forEach(m => {
+						var bc = new Discord.RichEmbed()
+						.setColor('RANDOM')
+						.addField('Server :', message.guild.name)
+						.addField('Sender :', message.author.username)
+						.addField('Message : ', args)
+						.setThumbnail(message.guild.iconURL)
+						.setAuthor(message.author.username, message.author.avatarURL)
+						m.send(bc)                
+
+   
+                });
+            });
     });
-  });
 }
-});
+ });
 
 
 client.on('message', message => {//new msg event
