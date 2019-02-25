@@ -49,6 +49,12 @@ msg.delete();
 }
 });
 
+
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","HT ' ."));
+    });
+
+
 client.on('message', message => {
     if (message.content === "-createroles") {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
