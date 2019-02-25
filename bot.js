@@ -326,6 +326,19 @@ client.on('typingStart', (ch, user) => {
 
 
 client.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('>bcall')){
+ if (message.author.id !== '469427192011423764') return message.reply('** This Command Only For Bot Owner هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === '469427192011423764') return;
+message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+client.on('message', message => {
 
     if (message.content === "-mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
@@ -921,7 +934,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | Ttest`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | Tdtest`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
