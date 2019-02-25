@@ -91,6 +91,21 @@ client.on('message', message => {
  });
 
 
+client.on('message', function(message) {
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;
+        var Dark = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()
+        .setTitle('``! لقد تلقيت رساله جديدة في الخاص !``')
+        .setThumbnail(`${message.author.avatarURL}`)
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
+    client.channels.get("ايدي الروم اللي تبي يرسل فيه").send({embed:Dark});
+    }
+});
+
+
 client.on('message', message => {//new msg event
 if(!message.channel.guild) return;
   if(message.content.startsWith(prefix + 'Rainbow')) {//to create the rainbow role
