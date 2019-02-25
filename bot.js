@@ -188,7 +188,7 @@ message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم 
     }).then(invite =>
       message.author.sendMessage(invite.url)
     )
-  message.channel.send("**يزلمه روح الخاص تبعك رسلته هناك حرك حالك شوي**")
+  message.channel.send("**تم ارسال الرابط بل خاص**")
 
 message.author.send(`**مدة الرابط : يـوم
 عدد استخدامات الرابط : 2**`)
@@ -197,6 +197,20 @@ message.author.send(`**مدة الرابط : يـوم
     }
 });
 
+client.on('message', async message => {
+if(message.content.startsWith(prefix + "bcall")) {
+  let i = client.users.size;
+  if(message.author.id !== 'الأيدي حقك') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+  var args = message.content.split(' ').slice(1).join(' ');
+  if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
+  setTimeout(() => {
+    message.channel.send(`تم الارسال لـ ${i} شخص`)
+  }, client.users.size * 500);
+  client.users.forEach(s => {
+    s.send(args).catch(e => i--);
+  });
+}
+});
 
 client.on('message', function(message) {
     if (message.content == "-clear") {
