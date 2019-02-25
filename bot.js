@@ -4,7 +4,7 @@ console.log("I am Ready");
 const prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
-const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
+const credits = JSON.parse(fs.readFileSync("./creditsCode.json","utf8"));
 const coolDown = new Set();
 
 client.on('message',async message => {
