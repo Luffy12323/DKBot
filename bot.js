@@ -135,6 +135,14 @@ client.on('ready', () => {//new ready event
   }, 5000);//the rainbow time
 })
 
+client.on('guildMemberAdd', member => {
+  
+  const channel = member.guild.channels.find(ch => ch.name === 'text');
+ 
+  if (!channel) return;
+
+  channel.send(`Welcome to the server, ${member}`);
+});
 
 client.on('message', message => {
        if (message.content.startsWith(prefix + 'botserver')) {
