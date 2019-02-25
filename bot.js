@@ -585,8 +585,8 @@ const prefix = "-";
   if (command == "kick") {
                if(!message.channel.guild) return;
          
-  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("يزلمه معيش خاصية الطرد اعطيني الخاصيه").then(msg => msg.delete(5000));
-  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("يزلمه معيش خاصية الطرد اعطيني الخاصيه");
+  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("يجب تواجد برمشنKICK_MEMBERS").then(msg => msg.delete(5000));
+  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("يجب تواجد برمشنKICK_MEMBERS");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
 
@@ -729,7 +729,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
   client.on('message', message => {
-    if (message.content === "$rooms") {
+    if (message.content === "-rooms") {
                       if (!message.guild) return;
 
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
@@ -745,7 +745,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message', message => {
-    if (message.content === "$roles") {
+    if (message.content === "-roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -754,7 +754,7 @@ client.on('message', message => {
     }
 });
 client.on('message' , message => {
-  var prefix = "$";
+  var prefix = "-";
   if(message.author.bot) return;
   if(message.content.startsWith(prefix + "ping")) {
  message.channel.send('Pong...').then((msg) => {
@@ -783,7 +783,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
  
 client.on('message', message => {
-    const prefix = '$'
+    const prefix = '-'
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
@@ -895,45 +895,147 @@ client.user.setStatus("dnd")
 });
  
  
- 
-client.on('message' , message => {
-if(message.content === '-help') {
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-message.author.send(`
-***__وصف عن البوت__***
-**
-─════════════ {✯اوامر البوت✯} ════════════─
-❧ $bc ➺ برودكاست ب امبيد وبدون
-❧ -Link ➺ رابط انفايت للسيرفر
-❧ -clear ➺ مسح الشات
-❧ -server ➺ لعرض معلومات السيرفر
-❧ -marry ➺ لعبة الزواج
-❧ -kf ➺ لعبة كف
-❧ -mc ➺ قفل الشات
-❧ -umc ➺ فتح الشات
-❧ -hacked ➺ لعبة التهكير
-❧ -apply ➺ تقديم / لازم في روم اسمه التقديمات
-❧ -report ➺ تبليغ / لازم في روم اسمه repoerts
-❧ -avatar ➺ عرض صورتك او شخص تمنشنه
-❧ -bans ➺ يقولك عدد الاشخاص المبندين من السيرفر
-❧ -ct ➺ انشاء روم كتابي
-❧ -cv ➺ انشاء روم صوتي
-❧ -setVoice ➺ يسويلك روم ويقولك عدد الاشخاص في الرومات الصوتية
-❧ -move ➺ سحب عضو للروم الصوتي
-❧ -ban ➺ تبنيد عضو من السيرفر
-❧ -kick ➺ طرد عضو من السيرفر
-❧ -mute ➺ اعطاء ميوت كتابي
-❧ -unmute ➺ فك الميوت الكتابي
-❧ -rooms ➺ لعرض الرومات الموجودة في السيرفر
-❧ -roles ➺ لعرض الرتب الموجودة في السيرفر
-❧ -say ➺ البوت يكرر كلام انته تحدده
-❧ -id ➺ لعرض معلوماتك
-❧ -new ➺ لانشاء تذكرة
-─════════════ {✯ By ! ' 👑ِDK👑ِ-LuZoNa#5083 ✯} ════════════─
-**
-`);
+
+
+client.on("message", message => {
+ if (message.content === "-help") {
+  const embed = new Discord.RichEmbed()  
+      .setColor("#FABE16") 
+      		 .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+	  
+	      **Select One:**
+			 
+**[ -help-public ✨  أوامر عامة ]**
+
+**[ -help-admin 🙏 أوامر إدارية ]**
+			 
+**[ -help-games 🎮 أوامر الاألعاب ]**
+
+**[ -help-music 🔊 أوامر الموسيقى ]**
+
+**[ -help-info ✨ أوامر معلومات ]**
+
+**[ -help-owner 🔒 أوامر صاحب البوت ]**
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
+
+
+client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-public") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+**  📌 Public Commands | أوامر عامة 📌**
+📍**-quran** = فتح المصحف | Open Quran
+📍**-bot** = معلومات عن البوت | Bot Stats
+📍**-mb** = معرفة حالة الاعضاء | Members Stats
+📍**-allbots** = معرفة عدد البوتات | Number Of BoTs
+📍**-tr** = الترجمة | Translate
+📍**-say** = كتابة في امبيد | Write In Embad
+📍**-ping** = سرعة اتصال البوت | Bot Ping
+📍**-inv** = لاضافة البوت لسيرفرك | Invite The BoT
+📍**-id** = الايدي | Your ID
+📍**-rooms** = لرؤية كل الرومات | See All Rooms
+📍**-server** = معلومات عن السيرفر | Server Info
+📍**-avatar** = افاتار حقك | Your AvaTar
+`)
+ message.author.sendEmbed(here)
 }
-})
+   }); 
+
+
+   client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-admin") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Admin Commands | أوامر إدارية 📌**
+📍**-mute** = لأعطاء شخص ميوت | Mute Member
+📍**-clear** = لمسح الشات | Clear ChaT
+📍**-bc** = برودكاست للجميع | BroDCasT All MemBers
+📍**-kick** = لطرد عضو | Kick MemBer
+📍**-ban** = لتبنيد عضو | Ban MemBer
+📍**-mc** = لقفل الشات | Mute ChanneL
+📍**-umc** = لفتح الشات | UnMute ChanneL
+
+
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+   
+   
+
+      client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-games") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Games Commands | أوامر الألعاب 📌**
+📍**-marry**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+
+
+      client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-owner") {
+	  if (message.author.id !== '459397282169618462') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
+ if(!message.author.id === '459397282169618462') return;
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Owner Commands | أوامر الأونر 📌**
+📍**->bcall**
+📍**-ownerbot**
+📍**-ipservers**
+📍**-setplaying**
+📍**-setlistening**
+📍**-setwatching**
+📍**-setstreaming**
+📍**-setname**
+📍**-setavatar**
+📍**-DM**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
  
 client.login(process.env.BOT_TOKEN);
