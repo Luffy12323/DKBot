@@ -105,7 +105,7 @@ client.on('message', function(message) {
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
-    client.channels.get("ايدي الروم اللي تبي يرسل فيه").send({embed:Dark});
+    client.channels.get("548119252541112320").send({embed:Dark});
     }
 });
 
@@ -981,7 +981,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | Test`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | Ttest`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
