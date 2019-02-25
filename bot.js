@@ -890,14 +890,14 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | Viper RP`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | Test`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
  
  
 client.on('message' , message => {
-if(message.content === '$help') {
+if(message.content === '-help') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
