@@ -148,7 +148,7 @@ message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
    const filte = m => m.content.startsWith("لا");
 message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 .then(collected =>{ 
-   message.channel.send(`  **${message.author} تم رفض عرضك** `);
+   message.channel.send(`  **${message.author}   تم رفض عرضك اعمل نفسك ميت** `);
 })
         
   }
@@ -247,18 +247,7 @@ client.on("guildMemberAdd", member => {
 
 ${member}  
 
-**مرحبا بك بالسيرفر | Welcome To Server
 
-Bot Name | اسم البوت : 👑ƵŦ Bot👑#6669 
-Servers | السيرفرات : ${client.guilds.size} 🌍
-Users | المستخدمين : ${client.users.size} 👥
-Bot Prefix | بريفكس البوت : [-]
-Help Command | امر المساعدة : -help
-Owner Bot | صاحب البوت : LuZoNa#5083
-
-لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
-**
-https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768
 `) 
 }).catch(console.error)
 })
@@ -1008,7 +997,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-setstreaming Made By : SuLtAn!7`,"http://twitch.tv/DJ")
+client.user.setGame(`Made By : SuLtAn!7`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
