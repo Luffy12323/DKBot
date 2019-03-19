@@ -937,10 +937,10 @@ client.on("message", (message) => {
     /// ALPHA CODES
    if (message.content.startsWith("-new")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
-        if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
+        if (!message.guild.roles.exists("name", "✸ Technical Support")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`); 
         message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
-            let role = message.guild.roles.find("name", "Support Team");
+            let role = message.guild.roles.find("name", "✸ Technical Support");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
@@ -957,7 +957,7 @@ client.on("message", (message) => {
             message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
-                .addField(`Hey ${message.author.username}!`, `الرجاء الانتظار ان شاء الله سيتم الرد عليك قريبا @support team`)
+                .addField(`مرحبا ${message.author.username}!`, `الرجاء الانتظار يا عسل سيتم الرد عليك قريبا باذن الله`)
                 .setTimestamp();
             c.send({
                 embed: embed
