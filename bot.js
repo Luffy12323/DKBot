@@ -456,7 +456,7 @@ client.on('message', message =>{
      
     if(cmd === `${prefix}report`){
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!rUser) return message.channel.send("Idk who 2 report ??");
+        if(!rUser) return message.channel.send("مثال : -report @wolf ينشر سيرفرات ??");
         let reason = args.join(" ").slice(22);
         if(!reason) return message.channel.send("شو السبب ??");
     
