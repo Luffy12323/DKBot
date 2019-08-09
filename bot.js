@@ -433,7 +433,7 @@ var gg = message.guild.channels.find('name', 'التقديمات')
 if(!gg) return;
 if(gg) {
 gg.send({embed : new Discord.RichEmbed()
-.setDescription(`**  الاسم + العمر + من وين :question:  : \n ${lan}\nهل عندك حسابات بسوشل ميديا :link: :\n ${md} \n ماذا تستطيع ان تقدم للسيرفر :question: :\n ${br}  \n كم تقيم خبراتك بل سكرمز + هل تستطيع البث حتى لو يوم بل اسبوع؟ : <@${message.author.id}> **`)  
+.setDescription(`**  الاسم + العمر + من وين :question:  : \n ${lan}\nهل عندك حسابات بسوشل ميديا :link: :\n ${md} \n كم تقيم خبراتك بل سكرمز + هل تستطيع البث حتى لو يوم بل اسبوع؟ :question: :\n ${br}  \n : <@${message.author.id}> **`)  
           .setFooter(`ادارة السيرفر`)
 .setTimestamp()
 });
