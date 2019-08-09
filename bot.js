@@ -394,7 +394,7 @@ welcomer.sendFile(canvas.toBuffer())
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    client.channels.get("557615946848796672").send({embed:DK});
+    client.channels.get("609196484495409161").send({embed:DK});
     }
 });   
 
@@ -429,7 +429,7 @@ ms.delete()
         setTimeout(() => {
   b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
         },2000);
-var gg = message.guild.channels.find('name', 'التقديمات')
+var gg = message.guild.channels.find('name', 'applicatoin')
 if(!gg) return;
 if(gg) {
 gg.send({embed : new Discord.RichEmbed()
@@ -1015,7 +1015,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Zap20 | -Help`,"http://twitch.tv/DJ")
+client.user.setGame(`اي مشكلة تواصل معي عل خاص`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
