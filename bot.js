@@ -1015,7 +1015,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Iraqi Life | -Help`,"http://twitch.tv/DJ")
+client.user.setGame(`Zap20 | -Help`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
@@ -1126,7 +1126,7 @@ client.on("message", message => {
       client.on("message", message => {
 	var prefix = "-";
  if (message.content === "-help-owner") {
-	  if (message.author.id !== '469427192011423764') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
+	  if (message.author.id !== '469427192011423764','343989777768513557') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
  if(!message.author.id === '469427192011423764') return;
     message.reply(`**
 	
