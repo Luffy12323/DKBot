@@ -401,7 +401,7 @@ welcomer.sendFile(canvas.toBuffer())
 
   client.on('message', async message => {
   if(message.content.startsWith(prefix + "apply")) {
-    await message.channel.send("**الاسم**").then(e => {
+    await message.channel.send("** الاسم + العمر + من وين**").then(e => {
     let filter = m => m.author.id === message.author.id
     let lan = '';
     let md = '';
@@ -411,31 +411,13 @@ welcomer.sendFile(canvas.toBuffer())
       lan = collected.first().content
       collected.first().delete()
 e.delete();
-     message.channel.send('**العمر**').then(m => {
+     message.channel.send('**هل عندك حسابات بسوشل ميديا**').then(m => {
 let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
 .then(co => {
   md = co.first().content
         co.first().delete()
         m.delete();
-     message.channel.send('**من اي دولة**').then(m => {
-let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-.then(co => {
-  md = co.first().content
-        co.first().delete()
-        m.delete();
-     message.channel.send('**كم تقيم خبرتك بلسكرمز**').then(m => {
-let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-.then(co => {
-  md = co.first().content
-        co.first().delete()
-        m.delete();
-     message.channel.send('**هل يوجد لك حسابات بتواصل الاجتماعي؟**').then(m => {
-let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-.then(co => {
-  md = co.first().content
-        co.first().delete()
-        m.delete();
-message.channel.send('**هل تستطيع ان تبث عل اقل يوم واحد في الاسبوع؟**').then(ms => {
+message.channel.send('**كم تقيم خبراتك بل سكرمز + هل تستطيع البث حتى لو يوم بل اسبوع؟**').then(ms => {
 let br = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
 .then(col => {
   br = col.first().content
@@ -447,11 +429,11 @@ ms.delete()
         setTimeout(() => {
   b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
         },2000);
-var gg = message.guild.channels.find('name', 'applicatoin')
+var gg = message.guild.channels.find('name', 'التقديمات')
 if(!gg) return;
 if(gg) {
 gg.send({embed : new Discord.RichEmbed()
-.setDescription(`**  الاسم :question:  : \n ${lan}\nالعمر :link: :\n ${md} \n ماذا تستطيع ان تقدم للسيرفر :question: :\n ${br}  \nتم التقديم بواسطة  : <@${message.author.id}> **`)  
+.setDescription(`**  الاسم + العمر + من وين :question:  : \n ${lan}\nهل عندك حسابات بسوشل ميديا :link: :\n ${md} \n ماذا تستطيع ان تقدم للسيرفر :question: :\n ${br}  \n كم تقيم خبراتك بل سكرمز + هل تستطيع البث حتى لو يوم بل اسبوع؟ : <@${message.author.id}> **`)  
           .setFooter(`ادارة السيرفر`)
 .setTimestamp()
 });
