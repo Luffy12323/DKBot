@@ -417,7 +417,25 @@ let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors:
   md = co.first().content
         co.first().delete()
         m.delete();
-message.channel.send('**ماذا تستطيع ان تقدم للسيرفر**').then(ms => {
+     message.channel.send('**من اي دولة**').then(m => {
+let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
+.then(co => {
+  md = co.first().content
+        co.first().delete()
+        m.delete();
+     message.channel.send('**كم تقيم خبرتك بلسكرمز**').then(m => {
+let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
+.then(co => {
+  md = co.first().content
+        co.first().delete()
+        m.delete();
+     message.channel.send('**هل يوجد لك حسابات بتواصل الاجتماعي؟**').then(m => {
+let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
+.then(co => {
+  md = co.first().content
+        co.first().delete()
+        m.delete();
+message.channel.send('**هل تستطيع ان تبث عل اقل يوم واحد في الاسبوع؟**').then(ms => {
 let br = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
 .then(col => {
   br = col.first().content
