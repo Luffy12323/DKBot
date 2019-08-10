@@ -93,13 +93,6 @@ client.on('message', message => {
  });
    
 
-client.on ("guildMemberAdd", member => {
-
-   var role = member.guild.roles.find ("name", "Player");
-   member.addRole (role);
-  
-})
-
 
   client.on('message', message => {
     if (message.content.startsWith("-Link")) {
@@ -263,7 +256,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 });
 
 
-client.on("guildMemberAdd", member => {
+client.on("guildMemberAdd", Player => {
   member.createDM().then(function (channel) {
   return channel.send(` 
 
