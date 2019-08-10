@@ -133,6 +133,19 @@ client.on('message', function(message) {
 
 });
 
+client.on('message', message => {
+  if (!message.content.startsWith(prefix)) return;
+  const verifed = ["469427192011423764,343989777768513557"];
+if (message.content.startsWith(prefix + 'ownerbot')) {
+    if(!message.channel.guild) return;
+if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**You Are Bot Owner | انت صاحب البوت **` + `✅`)
+} else {
+   message.reply('**You Are Not Bot Owner | انت لست صاحب البوت**' + '❌');   
+}
+}
+});
+
+
   client.on('message', message => {
       if(message.content.startsWith ("-marry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
@@ -302,6 +315,7 @@ client.on('message', async message => {
 if(message.content.startsWith(prefix + "bcall")) {
   let i = client.users.size;
   if(message.author.id !== '469427192011423764') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+  if(!message.author.id === '343989777768513557') return;
   var args = message.content.split(' ').slice(1).join(' ');
   if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
   setTimeout(() => {
@@ -738,7 +752,7 @@ const prefix = "-";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("469427192011423764").send({embed : banembed})
+  client.channels.get("609551466511990794").send({embed : banembed})
 }
 });
 
