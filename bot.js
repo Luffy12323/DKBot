@@ -1048,7 +1048,7 @@ client.on("message", message => {
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#FABE16") 
-      		 .setFooter('DK BOT' , client.user.avatarURL)
+      		 .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
 	  
 	      **Select One:**
@@ -1079,7 +1079,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('DK BOT' , client.user.avatarURL)
+      .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
 **  📌 Public Commands | أوامر عامة 📌**
 📍**-bot** = معلومات عن البوت | Bot Stats
@@ -1106,7 +1106,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('DK BOT' , client.user.avatarURL)
+      .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Admin Commands | أوامر إدارية 📌**
 📍**-mute** = لأعطاء شخص ميوت | Mute Member
@@ -1135,7 +1135,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('DK BOT' , client.user.avatarURL)
+      .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Games Commands | أوامر الألعاب 📌**
 📍**-marry**
@@ -1157,7 +1157,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-	  .setFooter('DK BOT' , client.user.avatarURL)
+	  .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Owner Commands | أوامر الأونر 📌**
 📍**-ownerbot**
@@ -1186,7 +1186,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-	  .setFooter('DK BOT' , client.user.avatarURL)
+	  .setFooter('ZT Clan' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Info Commands | معلومات عامة 📌**
 📍 **باللغة العربية :**
