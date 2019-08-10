@@ -3,6 +3,13 @@ const client = new Discord.Client();
 var prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
+client.on ("guildMemberAdd", member => {
+
+   var role = member.guild.roles.find ("name", "Player");
+   member.addRole (role);
+  
+})
+
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
     if (message.channel.type === 'dm') return ;
