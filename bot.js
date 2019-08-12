@@ -135,7 +135,7 @@ client.on('message', function(message) {
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
-  const verifed = ["510556955031371783"];
+  const verifed = ["510556955031371783,607991913072558130,469427192011423764,343989777768513557"];
 if (message.content.startsWith(prefix + 'انا العسل')) {
     if(!message.channel.guild) return;
 if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**يب انت عسل **` + `✅`)
