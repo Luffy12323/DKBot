@@ -135,12 +135,12 @@ client.on('message', function(message) {
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
-  const verifed = ["469427192011423764"];
-if (message.content.startsWith(prefix + 'ownerbot')) {
+  const verifed = ["510556955031371783"];
+if (message.content.startsWith(prefix + 'انا العسل')) {
     if(!message.channel.guild) return;
-if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**You Are Bot Owner | انت صاحب البوت **` + `✅`)
+if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**يب انت عسل **` + `✅`)
 } else {
-   message.reply('**You Are Not Bot Owner | انت لست صاحب البوت**' + '❌');   
+   message.reply('**انت مصخره مو عسل**' + '❌');   
 }
 }
 });
@@ -1037,7 +1037,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`اي مشكلة تواصل معي عل خاص`,"http://twitch.tv/DJ")
+client.user.setGame(`For Help "DM" me`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
