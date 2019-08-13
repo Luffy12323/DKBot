@@ -136,7 +136,7 @@ client.on('message', function(message) {
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   const verifed = ["469427192011423764"];
-if (message.content.startsWith(prefix + 'انا العسل')) {
+if (message.content.startsWith(prefix + 'l')) {
     if(!message.channel.guild) return;
 if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**اجا صاحب البوت وسعوا من هان**` + `✅`)
 } else {
