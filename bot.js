@@ -329,7 +329,7 @@ if(message.content.startsWith(prefix + "bcall")) {
 
 
 client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find('name', 'welcome');
+     const welcomer =  member.guild.channels.find('name', '#✋welcome✋');
     if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');
