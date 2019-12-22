@@ -136,7 +136,7 @@ client.on('message', function(message) {
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   const verifed = ["469427192011423764"];
-if (message.content.startsWith(prefix + 'l')) {
+if (message.content.startsWith(prefix + 'owner')) {
     if(!message.channel.guild) return;
 if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**اجا صاحب البوت وسعوا من هان**` + `✅`)
 } else {
@@ -416,7 +416,7 @@ welcomer.sendFile(canvas.toBuffer())
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    client.channels.get("609196484495409161").send({embed:DK});
+    client.channels.get("658320154995720193").send({embed:DK});
     }
 });   
 
@@ -1037,7 +1037,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Made By Craxel `,"http://twitch.tv/DJ")
+client.user.setGame(`OneLord E-Sports`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
@@ -1048,7 +1048,7 @@ client.on("message", message => {
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#FABE16") 
-      		 .setFooter('ZT Clan' , client.user.avatarURL)
+      		 .setFooter('OneLord' , client.user.avatarURL)
       .setDescription(`
 	  
 	      **Select One:**
@@ -1079,7 +1079,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('ZT Clan' , client.user.avatarURL)
+      .setFooter('OneLord' , client.user.avatarURL)
       .setDescription(`
 **  📌 Public Commands | أوامر عامة 📌**
 📍**-bot** = معلومات عن البوت | Bot Stats
@@ -1106,7 +1106,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('ZT Clan' , client.user.avatarURL)
+      .setFooter('OneLord' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Admin Commands | أوامر إدارية 📌**
 📍**-mute** = لأعطاء شخص ميوت | Mute Member
@@ -1135,7 +1135,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-      .setFooter('ZT Clan' , client.user.avatarURL)
+      .setFooter('OneLord' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Games Commands | أوامر الألعاب 📌**
 📍**-marry**
@@ -1157,7 +1157,7 @@ client.on("message", message => {
 	 **`)
   const here = new Discord.RichEmbed() 
       .setColor("GOLD")
-	  .setFooter('ZT Clan' , client.user.avatarURL)
+	  .setFooter('OneLord' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Owner Commands | أوامر الأونر 📌**
 📍**-ownerbot**
